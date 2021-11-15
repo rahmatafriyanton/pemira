@@ -17,7 +17,7 @@
   <link href="<?= base_url() ?>assets/css/icons.min.css" rel="stylesheet" type="text/css" />
   <!-- App Css-->
   <link href="<?= base_url() ?>assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-  <link href="<?= base_url() ?>assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+  <!-- <link href="<?= base_url() ?>assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" /> -->
 
 </head>
 
@@ -60,10 +60,6 @@
   <script src="<?= base_url() ?>assets/libs/simplebar/simplebar.min.js"></script>
   <script src="<?= base_url() ?>assets/libs/node-waves/waves.min.js"></script>
 
-  <!-- apexcharts -->
-  <script src="<?= base_url() ?>assets/libs/apexcharts/apexcharts.min.js"></script>
-
-  <script src="<?= base_url() ?>assets/js/pages/dashboard.init.js"></script>
 
   <script src="<?= base_url() ?>assets/js/app.js"></script>
 </body>
