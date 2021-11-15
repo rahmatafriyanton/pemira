@@ -85,9 +85,22 @@
                   </div>
 
                   <div class="mb-3">
+                    <label for="jenjang" class="form-label" name="jenjang">Jenjang</label>
+                    <select class="form-control" name="jenjang" id="jenjang">
+                      <option>Pilih Jenjang</option>
+                      <option value="D3">D3</option>
+                      <option value="S1">S1</option>
+                      <option value="S2">S2</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
                     <label for="fakultas_id" class="form-label">Fakultas</label>
                     <select class="form-control" name="fakultas_id" id="fakultas_id">
                       <option value="">Pilih Fakultas</option>
+                      <?php foreach ($fakultas as $row): ?>
+                        <option value="<?= $row['id'] ?>"><?= $row['nama_fakultas'] ?></option>
+                      <?php endforeach ?>
                     </select>
                   </div>
 
@@ -145,6 +158,8 @@
   <script src="<?= base_url() ?>assets/js/app.js"></script>
 
   <script>
+    var jenjang = '';
+    var fakultas = ''
     $('#form').submit(function(e) {
       e.preventDefault();
       $.LoadingOverlay("show");
@@ -179,6 +194,43 @@
         }
       })
     })
+
+    $(document).ready(function() {
+      $('#jenjang').change(function (e) {
+        e.preventDefault()
+        jenjang = $(this).val()
+      })
+
+      $('#fakultas_id').change(function (e) {
+        e.preventDefault()
+        fakultas = $(this).val()
+        get_jurusan()
+      })
+    });
+
+    function get_jurusan() {
+      $.LoadingOverlay("show");
+      $.ajax({
+        url: '<?= base_url("auth/get_jurusan") ?>',
+        type: 'post',
+        data: {
+          jenjang: jenjang,
+          fakultas_id: fakultas
+        },
+        dataType: 'json',
+        success: function(response) {
+          $.LoadingOverlay("hide");
+          options = '';
+          $.each(response.jurusan, function( key, value ) {
+            console.log('Dataa', value['nama_jurusan'])
+            // $("#jurusan_id").append(new Option(value['nama_jurusan'], value['id']));
+            options += '<option value='+value['id']+'>'+value['nama_jurusan']+'</option>'
+
+          });
+          $('#jurusan_id').html(options)
+        }
+      })
+    }
   </script>
 </body>
 

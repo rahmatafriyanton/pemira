@@ -6,6 +6,10 @@ class C_dashboard extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->c_folder = $this->class = str_replace("C_", "", $this->router->fetch_class());
+
+		if (!is_login()) {
+			redirect(base_url('auth'));
+		}
 	}
 
 	public function index() {

@@ -11,8 +11,17 @@
             </a>
           </li>
 
+          <!-- <?php if (is_admin()): ?>
+            <li class="nav-item">
+              <a class="nav-link arrow-none" href="#" >
+                <i class="bx bx-wrench me-2"></i><span key="t-dashboards">Manage Ormawa</span>
+              </a>
+            </li>
+          <?php endif ?> -->
+
         </ul>
       </div>
     </nav>
   </div>
 </div>
+

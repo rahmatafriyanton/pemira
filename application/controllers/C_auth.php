@@ -46,6 +46,7 @@ class C_auth extends CI_Controller {
 				$cek = $cek[0];
 				if ($cek['password'] == $params['password']) {
 					unset($cek['password']);
+					$cek['roles']	= $this->auth->get_user_role_data($cek);
 					$this->session->set_userdata($cek);
 					$data['success'] 	= true;
 					$data['message'] 	= 'Berhasil Login';
@@ -105,7 +106,8 @@ class C_auth extends CI_Controller {
 			$this->session->set_flashdata('warning', 'Silahkan Masuk Untuk Memulai!');
 			redirect('auth');
 		}
-		$this->load->view('auth/form_data_user');
+		$data['fakultas'] = $this->auth->get_fakultas();
+		$this->load->view('auth/form_data_user', $data);
 	}
 
 	public function set_user_data() {
@@ -126,9 +128,15 @@ class C_auth extends CI_Controller {
 			$params 								= $this->input->post();
 			$params['password']			= md5(sha1($params['password']));
 			$params['is_activated'] = 1;
+			$params['roles']				= [1];
+			$params['id']						= $this->session->userdata('id');
 			if ($this->auth->update_user_data($params)) {
 				// session_destroy();
+				unset($params['password']);
+				$params['roles']	= $this->auth->get_user_role_data($params);
 				$this->session->set_userdata($params);
+				// var_dump($this->session->userdata());
+				// die();
 				$data['success'] 	= true;
 				$data['message'] 	= 'Data berhasil disimpan';
 				$data['redirect']	= base_url('dashboard');
@@ -138,11 +146,20 @@ class C_auth extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function get_jurusan() {
+		$data['success'] = true;
+		$params = $this->input->post();
+		$data['jurusan'] = $this->auth->get_jurusan($params);
+
+		echo json_encode($data);
+	}
+
 	public function logout() {
 		session_destroy();
 		$this->session->flashdata('warning', 'Berhasil Keluar');
 		redirect('auth');
 	}
+
 
 }
 
