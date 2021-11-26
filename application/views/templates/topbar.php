@@ -5,19 +5,19 @@
       <div class="navbar-brand-box">
         <a href="index.html" class="logo logo-dark">
           <span class="logo-sm">
-            <img src="assets/images/logo.svg" alt="" height="22">
+            <img src="<?= base_url() ?>assets/images/logo.svg" alt="" height="22">
           </span>
           <span class="logo-lg">
-            <img src="assets/images/logo-dark.png" alt="" height="17">
+            <img src="<?= base_url() ?>assets/images/pemira_logo.png" alt="" height="17">
           </span>
         </a>
 
         <a href="index.html" class="logo logo-light">
           <span class="logo-sm">
-            <img src="assets/images/logo-light.svg" alt="" height="22">
+            <img src="<?= base_url() ?>assets/images/logo-light.svg" alt="" height="22">
           </span>
           <span class="logo-lg">
-            <img src="assets/images/logo-light.png" alt="" height="19">
+            <img src="<?= base_url() ?>assets/images/pemira_logo.png" alt="" height="19">
           </span>
         </a>
       </div>
@@ -38,7 +38,7 @@
 
     <div class="d-flex">
 
-      <div class="dropdown d-inline-block d-lg-none ms-2">
+<!--       <div class="dropdown d-inline-block d-lg-none ms-2">
         <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="mdi mdi-magnify"></i>
         </button>
@@ -54,7 +54,7 @@
             </div>
           </form>
         </div>
-      </div>
+      </div> -->
 
       <div class="dropdown d-inline-block">
         <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,7 +100,7 @@
 
       <div class="dropdown d-inline-block">
         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg" alt="Header Avatar">
+          <img class="rounded-circle header-profile-user" src="<?= base_url() ?>assets/images/users/dafa.jpg" alt="Header Avatar">
           <span class="d-none d-xl-inline-block ms-1" key="t-henry"><?= $this->session->userdata('nama_lengkap'); ?></span>
           <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
         </button>

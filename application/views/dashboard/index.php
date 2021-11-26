@@ -30,10 +30,10 @@
         </div>
         <div class="card-body pt-0">
           <div class="row">
-            <?php var_dump($this->session->userdata()); ?>
+<!--             <?php var_dump($this->session->userdata()); ?> -->
             <div class="col-sm-4">
               <div class="avatar-md profile-user-wid mb-4">
-                <img src="assets/images/users/avatar-2.jpg" alt="" class="img-thumbnail rounded-circle">
+                <img src="assets/images/users/dafa.jpg" alt="" class="img-thumbnail rounded-circle">
               </div>
               <h5 class="font-size-15 text-truncate"><?= $this->session->userdata('nama_lengkap'); ?></h5>
               <!-- <p class="text-muted mb-0 text-truncate">UI/UX Designer</p> -->

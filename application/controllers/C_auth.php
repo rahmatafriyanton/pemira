@@ -5,7 +5,7 @@ class C_auth extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('M_auth_model', 'auth');
+		$this->load->model('M_auth', 'auth');
 
 		include_once FCPATH . "/vendor/autoload.php";
 		$this->google_client = new Google_Client();
@@ -23,6 +23,7 @@ class C_auth extends CI_Controller {
 			$this->load->view('auth/login', $data);
 		} else {
 			redirect('auth/login');
+			// echo $this->session->userdata('email');
 		}
 	}
 
@@ -66,39 +67,42 @@ class C_auth extends CI_Controller {
 		$email = $this->session->userdata('email');
 
 		if(isset($_GET["code"])) {
-				$token = $this->google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+			$token = $this->google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
 
-				if(!isset($token["error"])) {
-					$this->google_client->setAccessToken($token['access_token']);
-					$google_service = new Google_Service_Oauth2($this->google_client);
-					$data = $google_service->userinfo->get();
-					$email = $data->email;
-				}
+			if(!isset($token["error"])) {
+				$this->google_client->setAccessToken($token['access_token']);
+				$google_service = new Google_Service_Oauth2($this->google_client);
+				$data = $google_service->userinfo->get();
+				$email = $data->email;
 			}
+		}
 
-			if (substr($email, strpos($email, "@") + 1) != "mahasiswa.upnvj.ac.id") {
-				$this->session->set_flashdata('warning', 'Harap Gunakan Email UPNVJ Saat Masuk!');
-				redirect('auth');
-			}
+		if (substr($email, strpos($email, "@") + 1) != "mahasiswa.upnvj.ac.id") {
+			session_destroy();
+			$this->session->set_flashdata('warning', 'Harap Gunakan Email UPNVJ Saat Masuk!');
+			redirect('auth');
+		}
 
-			$cek = $this->auth->get_user_data(['email' => $email]);
-			if ($cek == null) {
-				$params['email']			 		= $data->email;
-				$params['nama_lengkap'] 	= $data->name;
-				$params['jenis_kelamin']	= $data->gender;
+		$cek = $this->auth->get_user_data(['email' => $email]);
+		if ($cek == null) {
+			$params['email']			 		= $data->email;
+			$params['nama_lengkap'] 	= $data->name;
+			$params['jenis_kelamin']	= $data->gender;
 
-				$this->auth->insert_user_data($params);
-				$cek = $this->auth->get_user_data(['email' => $data->email]);
-			}
+			$this->auth->insert_user_data($params);
+			$cek = $this->auth->get_user_data(['email' => $data->email]);
+		}
 
-			$cek = $cek[0];
-			unset($cek['password']);
-			$this->session->set_userdata($cek);
-			if ($cek['is_activated'] == 1) {
-				redirect(base_url('dashboard'));
-			} else {
-				redirect('auth/lengkapi_user_data');
-			}
+		$cek = $cek[0];
+		$cek['roles']	= $this->auth->get_user_role_data($cek);
+		// var_dump($cek); die();
+		unset($cek['password']);
+		$this->session->set_userdata($cek);
+		if ($cek['is_activated'] == 1) {
+			redirect(base_url('dashboard'));
+		} else {
+			redirect('auth/lengkapi_user_data');
+		}
 	}
 
 	public function lengkapi_user_data() {

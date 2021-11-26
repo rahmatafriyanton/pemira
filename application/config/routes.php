@@ -57,6 +57,19 @@ $route['auth'] 			 			 	= "C_auth/index";
 $route['auth/(:num)'] 			= "C_auth/index/$1";
 $route['auth/(:any)'] 			= 'C_auth/$1';
 
-$route['dashboard'] 			 			 	= "C_dashboard/index";
-$route['dashboard/(:num)'] 			= "C_dashboard/index/$1";
-$route['dashboard/(:any)'] 			= 'C_dashboard/$1';
+$route['dashboard'] 			 	= "C_dashboard/index";
+$route['dashboard/(:num)'] 	= "C_dashboard/index/$1";
+$route['dashboard/(:any)'] 	= 'C_dashboard/$1';
+
+$route['ormawa'] 			 			= "C_ormawa/index";
+$route['ormawa/(:num)'] 		= "C_ormawa/index/$1";
+$route['ormawa/(:any)'] 		= 'C_ormawa/$1';
+
+$route['master_acara'] 			 			= "C_master_acara/index";
+$route['master_acara/(:num)'] 		= "C_master_acara/index/$1";
+$route['master_acara/(:any)'] 		= 'C_master_acara/$1';
+
+$route['pemilihan'] 			 					= "C_pemilihan/index";
+$route['pemilihan/(:num)'] 					= "C_pemilihan/index/$1";
+$route['pemilihan/(:any)'] 					= 'C_pemilihan/$1';
+$route['pemilihan/(:any)/(:num)'] 	= 'C_pemilihan/$1/$2';
