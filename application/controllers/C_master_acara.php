@@ -15,9 +15,9 @@ class C_master_acara extends CI_Controller {
 			redirect(base_url('auth'));
 		}
 
-		if (!is_moderator() || !is_admin()) {
-			redirect('dashboard');
-		}
+		// if (!is_moderator() || !is_admin()) {
+		// 	redirect('dashboard');
+		// }
 	}
 
 	// Datatable

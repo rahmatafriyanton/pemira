@@ -19,7 +19,7 @@
             </li>
           <?php endif ?>
 
-          <?php if (is_admin()): ?>
+          <?php if (is_moderator()): ?>
             <li class="nav-item">
               <a class="nav-link arrow-none" href="<?= base_url('master_acara') ?>" >
                 <i class="bx bx-wrench me-2"></i><span key="t-master_acara">Master Acara</span>

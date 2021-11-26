@@ -70,9 +70,9 @@
             </div>
           </div>
           <div class="card-footer bg-transparent border-top">
-            <div class="contact-links d-flex font-size-20">
+            <div class="contact-links d-flex">
               <div class="flex-fill">
-                <a class="visi_misi" href="javascript: void(0);" data-pemilihan_id="<?= $data_pemilihan['id'] ?>" data-peserta_id="<?= $data_peserta[$key][0]['peserta_id'] ?>"><i class="bx bx-message-square-dots"></i></a>
+                <a class="visi_misi" href="javascript: void(0);" data-pemilihan_id="<?= $data_pemilihan['id'] ?>" data-peserta_id="<?= $data_peserta[$key][0]['peserta_id'] ?>"><i class="bx bx-info-circle"></i> Visi & Misi</a>
               </div>
             </div>
           </div>
