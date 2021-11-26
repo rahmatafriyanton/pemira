@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 26, 2021 at 05:34 AM
+-- Generation Time: Nov 26, 2021 at 02:23 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -71,7 +71,9 @@ INSERT INTO `hasil_pemilihan` (`id`, `pemilihan_id`, `peserta_id`, `pemilih_id`,
 (4, 45, 'ncpg1llp2hivnerwmwavtticjvaczxxfoxqk8shower5yw6dfnb27onv9hezm8lqg76kjafm3jkqdipuubiohy0jzfdys54t9ls', 3, '2021-11-24 11:58:35'),
 (5, 46, 'kqyodq12be3hsi8f4xsvmpijdf0ioxye5kyerpsldxairgvccr76tnl5c9u4aauku7n09ttvvghambwqbf16df8sjechzlgrwmw', 10, '2021-11-26 11:28:09'),
 (6, 46, 'kqyodq12be3hsi8f4xsvmpijdf0ioxye5kyerpsldxairgvccr76tnl5c9u4aauku7n09ttvvghambwqbf16df8sjechzlgrwmw', 11, '2021-11-26 11:28:36'),
-(7, 46, 'khf0qa9wayveshenepihkgmomd6ls7qobvxtgfsmzi5anirzbfr5nlv1de38wlizjt3pnf9hgcc4z0ysjdcu2rqjbxc27ptqwvk', 13, '2021-11-26 11:29:11');
+(7, 46, 'khf0qa9wayveshenepihkgmomd6ls7qobvxtgfsmzi5anirzbfr5nlv1de38wlizjt3pnf9hgcc4z0ysjdcu2rqjbxc27ptqwvk', 13, '2021-11-26 11:29:11'),
+(8, 48, '1qes9fgfv7wayhlpjxjggyrhzndilnofyv69qizn50orik24exztsfxpmxvswqsrhlbaibukkontd73bmctv2wbu6jepdl4p8tj', 8, '2021-11-26 20:00:25'),
+(9, 49, 'v6equpydzogoj13m2xqsq8vrgcwpd7dw8kqn16wkxtjbb9fk7lflxtmr9shpvepsia5ohn0wb5iyhlmm3kcgjicsjhutnzogx2y', 8, '2021-11-26 20:14:48');
 
 -- --------------------------------------------------------
 
@@ -142,7 +144,8 @@ CREATE TABLE `master_pemilihan` (
 
 INSERT INTO `master_pemilihan` (`id`, `user_id`, `fakultas_id`, `ormawa_id`, `nama_acara`, `tanggal_mulai`, `tanggal_selesai`, `created_at`, `updated_at`) VALUES
 (46, 8, 8, 1, 'Pemilihan Ketua BEM', '2021-11-01 00:12:00', '2021-11-24 11:30:05', '2021-11-26 07:51:47', '0000-00-00 00:00:00'),
-(47, 8, 4, 2, 'Pemilihan Ketua KSM Android', '2021-12-01 10:12:00', '2021-12-01 23:12:00', '2021-11-26 10:29:30', '0000-00-00 00:00:00');
+(47, 8, 4, 2, 'Pemilihan Ketua KSM Android', '2021-11-24 10:12:00', '2021-12-01 23:12:00', '2021-11-26 10:29:30', '0000-00-00 00:00:00'),
+(49, 9, 4, 9, 'Pemilihan Ketua Ormawa Coba', '2021-11-22 20:12:00', '2021-11-24 23:12:00', '2021-11-26 20:11:25', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -169,7 +172,7 @@ CREATE TABLE `master_pemilihan_pemilih` (
 --
 
 INSERT INTO `master_pemilihan_pemilih` (`id`, `pemilihan_id`, `user_id`, `nim`, `nama_lengkap`, `email`, `fakultas`, `jurusan`, `token`, `sudah_memilih`, `tanggal_memilih`) VALUES
-(20, 46, 8, '2010511133', 'Rahmat Afriyanton', '2010511133@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'ibywgd', 0, NULL),
+(20, 49, 8, '2010511133', 'Rahmat Afriyanton', '2010511133@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'vciqtx', 1, '2021-11-26 14:14:48'),
 (21, 46, 9, '2010511129', 'Dafa Rabbani', '2010511129@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'gussqm', 0, NULL),
 (22, 46, 10, '2010511200', 'Dimas', '2010511200@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'imtiua', 1, '2021-11-26 05:28:09'),
 (23, 46, 11, '2010511201', 'Zaki', '2010511201@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'jfixqu', 1, '2021-11-26 05:28:36'),
@@ -179,7 +182,7 @@ INSERT INTO `master_pemilihan_pemilih` (`id`, `pemilihan_id`, `user_id`, `nim`, 
 (27, 46, 15, '2010511205', 'Larry Lister', '2010511205@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'nbwsmq', 0, NULL),
 (28, 46, 16, '2010511206', 'Hector Stephens', '2010511206@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'xkiujc', 0, NULL),
 (29, 46, 17, '2010511207', 'acques Singleton', '2010511207@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'ipblso', 0, NULL),
-(30, 47, 8, '2010511133', 'Rahmat Afriyanton', '2010511133@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'ekcvby', 0, NULL),
+(30, 49, 8, '2010511133', 'Rahmat Afriyanton', '2010511133@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'vciqtx', 1, '2021-11-26 14:14:48'),
 (31, 47, 9, '2010511129', 'Dafa Rabbani', '2010511129@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'hnpglb', 0, NULL),
 (32, 46, 10, '2010511200', 'Dimas', '2010511200@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'imtiua', 1, '2021-11-26 05:28:09'),
 (33, 46, 11, '2010511201', 'Zaki', '2010511201@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'jfixqu', 1, '2021-11-26 05:28:36'),
@@ -188,7 +191,17 @@ INSERT INTO `master_pemilihan_pemilih` (`id`, `pemilihan_id`, `user_id`, `nim`, 
 (36, 47, 14, '2010511204', 'Weronika Blair', '2010511204@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'ckbopg', 0, NULL),
 (37, 47, 15, '2010511205', 'Larry Lister', '2010511205@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'uqwxny', 0, NULL),
 (38, 47, 16, '2010511206', 'Hector Stephens', '2010511206@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'mpusof', 0, NULL),
-(39, 47, 17, '2010511207', 'acques Singleton', '2010511207@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'horbbk', 0, NULL);
+(39, 47, 17, '2010511207', 'acques Singleton', '2010511207@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'horbbk', 0, NULL),
+(50, 49, 8, '2010511133', 'Rahmat Afriyanton', '2010511133@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'vciqtx', 1, '2021-11-26 14:14:48'),
+(51, 49, 9, '2010511129', 'Dafa Rabbani', '2010511129@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'jzvrhi', 0, NULL),
+(52, 49, 10, '2010511200', 'Dimas', '2010511200@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'vmuyjc', 0, NULL),
+(53, 49, 11, '2010511201', 'Zaki', '2010511201@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'emkyyn', 0, NULL),
+(54, 49, 12, '2010511202', 'Budi', '2010511202@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'wgvvry', 0, NULL),
+(55, 49, 13, '2010511203', 'Glyn Needham', '2010511203@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'xmkwhh', 0, NULL),
+(56, 49, 14, '2010511204', 'Weronika Blair', '2010511204@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'bfautp', 0, NULL),
+(57, 49, 15, '2010511205', 'Larry Lister', '2010511205@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'qjzrwy', 0, NULL),
+(58, 49, 16, '2010511206', 'Hector Stephens', '2010511206@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'mswfrf', 0, NULL),
+(59, 49, 17, '2010511207', 'acques Singleton', '2010511207@mahasiswa.upnvj.ac.id', 'Fakultas Ilmu Komputer', 'Informatika', 'rxirue', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -221,7 +234,13 @@ INSERT INTO `master_pemilihan_peserta` (`id`, `peserta_id`, `pemilihan_id`, `nim
 (43, 'k366ygifwlnfmo1qxt9vrjclriq08mexlc4z8t1rr7feapbhintbdgposwav4mq0s2jdwhtxdkcgnujxdsyquualbemszcyowvn', 47, '2010511200', 'Dimas', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'ketua'),
 (44, 'k366ygifwlnfmo1qxt9vrjclriq08mexlc4z8t1rr7feapbhintbdgposwav4mq0s2jdwhtxdkcgnujxdsyquualbemszcyowvn', 47, '2010511201', 'Zaki', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'wakil_ketua'),
 (45, 'rpckp13mtpszqgn59mcbosu2igypg68oxanjkifbf4ef9ag1sj00we77lewlzrbxknvmlrqxm2ivaqcdojqz5uf4djwiw3vbdty', 47, '2010511202', 'Budi', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'ketua'),
-(46, 'rpckp13mtpszqgn59mcbosu2igypg68oxanjkifbf4ef9ag1sj00we77lewlzrbxknvmlrqxm2ivaqcdojqz5uf4djwiw3vbdty', 47, '2010511203', 'Glyn Needham', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'wakil_ketua');
+(46, 'rpckp13mtpszqgn59mcbosu2igypg68oxanjkifbf4ef9ag1sj00we77lewlzrbxknvmlrqxm2ivaqcdojqz5uf4djwiw3vbdty', 47, '2010511203', 'Glyn Needham', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'wakil_ketua'),
+(51, 'v6equpydzogoj13m2xqsq8vrgcwpd7dw8kqn16wkxtjbb9fk7lflxtmr9shpvepsia5ohn0wb5iyhlmm3kcgjicsjhutnzogx2y', 49, '2010511200', 'Dimas', '', 'Fakultas Ilmu Komputer', 'Informatika', './assets/images/profil_peserta/20211126021320.png', 'ketua'),
+(52, 'v6equpydzogoj13m2xqsq8vrgcwpd7dw8kqn16wkxtjbb9fk7lflxtmr9shpvepsia5ohn0wb5iyhlmm3kcgjicsjhutnzogx2y', 49, '2010511201', 'Zaki', '', 'Fakultas Ilmu Komputer', 'Informatika', './assets/images/profil_peserta/20211126021320.png', 'wakil_ketua'),
+(53, 'mrumcy09ghya4qh1vz1jfydumgve8itjhcbzzaf6slak3i4ng2seb7odcypwejdonokwcibf5kbotqjrs8xvlwgpnhz23witxfp', 49, '2010511202', 'Budi', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'ketua'),
+(54, 'mrumcy09ghya4qh1vz1jfydumgve8itjhcbzzaf6slak3i4ng2seb7odcypwejdonokwcibf5kbotqjrs8xvlwgpnhz23witxfp', 49, '2010511203', 'Glyn Needham', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'wakil_ketua'),
+(55, 'hd261ch04wiwlgolrz8xu3cktdhamp0bey2rtyem6nv55n9vjakisqunzeymgyb9oa1f7fva87shsfrqp3xlwqnqeckzljxtjru', 49, '2010511204', 'Weronika Blair', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'ketua'),
+(56, 'hd261ch04wiwlgolrz8xu3cktdhamp0bey2rtyem6nv55n9vjakisqunzeymgyb9oa1f7fva87shsfrqp3xlwqnqeckzljxtjru', 49, '2010511205', 'Larry Lister', '', 'Fakultas Ilmu Komputer', 'Informatika', NULL, 'wakil_ketua');
 
 -- --------------------------------------------------------
 
@@ -244,7 +263,8 @@ CREATE TABLE `master_pemilihan_visi_misi` (
 --
 
 INSERT INTO `master_pemilihan_visi_misi` (`id`, `pemilihan_id`, `peserta_id`, `visi`, `misi`, `created_at`, `created_by`) VALUES
-(4, 46, 'kqyodq12be3hsi8f4xsvmpijdf0ioxye5kyerpsldxairgvccr76tnl5c9u4aauku7n09ttvvghambwqbf16df8sjechzlgrwmw', 'Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quae soluta, cupiditate mollitia explicabo sit eos voluptate dignissimos. Reiciendis itaque, exercitationem ipsum quisquam quam pariatur omnis consequuntur blanditiis iusto facilis obcaecati ad molestias fugit reprehenderit minus rerum consequatur ullam hic amet odio similique autem. Ipsum vel id explicabo laborum error architecto labore, tempora aliquam qui incidunt quos nihil vitae numquam quod consequuntur sit magnam quam in corrupti molestias rerum iste quo asperiores eum. Doloremque suscipit praesentium eum, perspiciatis commodi adipisci temporibus officia, in necessitatibus tempore explicabo hic incidunt deleniti quia vel ipsum corrupti animi impedit cumque, unde tenetur! Similique, sapiente, expedita?<br>', '<ul><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li></ul>', '2021-11-26 11:26:41', 0);
+(4, 46, 'kqyodq12be3hsi8f4xsvmpijdf0ioxye5kyerpsldxairgvccr76tnl5c9u4aauku7n09ttvvghambwqbf16df8sjechzlgrwmw', 'Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quae soluta, cupiditate mollitia explicabo sit eos voluptate dignissimos. Reiciendis itaque, exercitationem ipsum quisquam quam pariatur omnis consequuntur blanditiis iusto facilis obcaecati ad molestias fugit reprehenderit minus rerum consequatur ullam hic amet odio similique autem. Ipsum vel id explicabo laborum error architecto labore, tempora aliquam qui incidunt quos nihil vitae numquam quod consequuntur sit magnam quam in corrupti molestias rerum iste quo asperiores eum. Doloremque suscipit praesentium eum, perspiciatis commodi adipisci temporibus officia, in necessitatibus tempore explicabo hic incidunt deleniti quia vel ipsum corrupti animi impedit cumque, unde tenetur! Similique, sapiente, expedita?<br>', '<ul><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li><li>Lorem ipsum dolor sit amet consectetur adipisicing, elit</li></ul>', '2021-11-26 11:26:41', 0),
+(6, 49, 'v6equpydzogoj13m2xqsq8vrgcwpd7dw8kqn16wkxtjbb9fk7lflxtmr9shpvepsia5ohn0wb5iyhlmm3kcgjicsjhutnzogx2y', '<p>Ini Visi<br></p>', '<ol><li>Misi 1</li><li>Misi 2</li><li>Misi 3<br></li></ol>', '2021-11-26 20:13:20', 0);
 
 -- --------------------------------------------------------
 
@@ -268,7 +288,8 @@ INSERT INTO `ormawa` (`id`, `fakultas_id`, `user_id`, `nama_ormawa`, `logo`) VAL
 (1, 8, 8, 'Bem Universitas ', './assets/images/logo_ormawa/20211117025010.png'),
 (2, 4, 8, 'KSM Android', ''),
 (3, 4, 8, 'KSM Robotika', ''),
-(5, 1, 18, 'Himpunan Mahasiswa Ekonomi', '');
+(5, 1, 18, 'Himpunan Mahasiswa Ekonomi', ''),
+(9, 4, 9, 'Ormawa Coba', '');
 
 -- --------------------------------------------------------
 
@@ -356,7 +377,7 @@ CREATE TABLE `user_roles` (
 
 INSERT INTO `user_roles` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 1, 8),
-('2021-11-26 07:38:21', '2021-11-26 07:38:21', 1, 9),
+('2021-11-26 19:49:16', '2021-11-26 19:49:16', 1, 9),
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 1, 10),
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 1, 11),
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 1, 12),
@@ -374,6 +395,7 @@ INSERT INTO `user_roles` (`created_at`, `updated_at`, `role_id`, `user_id`) VALU
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 1, 24),
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 1, 25),
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 2, 8),
+('2021-11-26 19:49:16', '2021-11-26 19:49:16', 2, 9),
 ('2021-11-26 07:38:21', '2021-11-26 07:38:21', 3, 8);
 
 --
@@ -461,7 +483,7 @@ ALTER TABLE `fakultas`
 -- AUTO_INCREMENT for table `hasil_pemilihan`
 --
 ALTER TABLE `hasil_pemilihan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
@@ -473,31 +495,31 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `master_pemilihan`
 --
 ALTER TABLE `master_pemilihan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `master_pemilihan_pemilih`
 --
 ALTER TABLE `master_pemilihan_pemilih`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `master_pemilihan_peserta`
 --
 ALTER TABLE `master_pemilihan_peserta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `master_pemilihan_visi_misi`
 --
 ALTER TABLE `master_pemilihan_visi_misi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ormawa`
 --
 ALTER TABLE `ormawa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`

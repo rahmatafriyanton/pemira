@@ -149,7 +149,7 @@ class M_master_acara extends CI_Model {
 		$isi .= "<p>Token hanya berlaku satu kali</p>";
 
     $this->email->initialize($config);
-    $this->email->from('lokailmu.id@gmail.com', 'lokailmu');
+    $this->email->from('lokailmu.id@gmail.com', 'Konfirmasi Acara Pemilihan');
     $this->email->to($params['email']);
     $this->email->subject('Konfirmasi Token Pemilihan UPNVJ');
     $this->email->message($isi); 
